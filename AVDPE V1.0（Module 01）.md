@@ -1,117 +1,147 @@
 # ============================================================
 # AI Video Director Prompt Engine
 # Module 01 : Story Analysis Engine
+# Update : Scene Breakdown
 # Version : V1.0
 # Status : Stable
 # ============================================================
 
+## New Output Structure
+
+Story Analysis Engine now generates TWO outputs.
+
+Output 01
+
+Story Bible
+
+↓
+
+Output 02
+
+Scene Breakdown
+
+Both outputs become the input of the next module.
+
+------------------------------------------------------------
+
+# Scene Breakdown
+
 ## Mission
 
-The Story Analysis Engine is responsible for transforming narrative text into a structured visual story representation.
+Transform the story into logical production scenes.
 
-This module MUST understand the story before any storyboard, shot planning or prompt generation begins.
+A Scene is the smallest complete narrative unit before shot planning.
 
-Prompt generation is strictly forbidden in this stage.
+Visual Decision Engine must process scenes one by one.
 
----
+Never process the entire story at once.
 
-## Input
+------------------------------------------------------------
 
-Any narrative text.
+## Scene Definition
 
-Supported input includes:
+A Scene begins when:
 
-- 小说
-- 剧本
-- 对白
-- 文案
-- 故事梗概
-- 章节
-- 短视频剧情
-- AI小说
-- 网络爽文
+- A new location appears.
+- A new time period begins.
+- The primary objective changes.
+- The main conflict changes.
+- The dominant emotional state changes.
+- The narrative viewpoint changes.
 
----
+A Scene ends when one of the above changes occurs.
 
-## Output
+------------------------------------------------------------
 
-Generate a Story Bible.
+## Scene Structure
 
-The Story Bible becomes the only source of truth for all following modules.
+Each Scene must contain the following information.
 
----
+------------------------------------------------------------
 
-# Story Bible Structure
+Scene ID
 
-## 1. Genre
+Sequential numbering.
 
-Identify the primary genre.
+Example
 
-Examples:
+Scene 01
 
-- Xianxia
-- Fantasy
-- Wuxia
-- Sci-Fi
-- Modern
-- Horror
-- Comedy
-- Romance
-- Documentary
-- Animation
+Scene 02
 
-Multiple genres are allowed.
+Scene 03
 
----
+------------------------------------------------------------
 
-## 2. World
+Scene Name
 
-Build the world description.
+Short descriptive title.
 
-Extract:
+Examples
 
-World Type
+Tea House
 
-Historical Period
+Tea House Entrance
 
-Civilisation
+Market Street
 
-Technology Level
+Mountain Gate
 
-Magic System
+------------------------------------------------------------
 
-Social Environment
+Narrative Function
 
-World Rules
+Describe the purpose of this scene.
 
-Example:
+Choose ONE primary function.
 
-World:
-Ancient Xianxia World
+Introduce
 
-Magic:
-Cultivation
+Build
 
-Technology:
-Traditional Chinese Ancient
+Conflict
 
----
+Reveal
 
-## 3. Timeline
+Transition
 
-Extract:
+Climax
 
-Current Time
+Resolution
 
-Season
+------------------------------------------------------------
 
-Weather
+Scene Objective
 
-Lighting
+Describe what this scene must accomplish.
 
-Time Progression
+Example
 
-Examples:
+Introduce Su Boss.
+
+Reveal Young Master's intention.
+
+Increase tension.
+
+Start confrontation.
+
+Show escape.
+
+------------------------------------------------------------
+
+Location
+
+Scene location.
+
+Indoor
+
+Outdoor
+
+Specific place.
+
+------------------------------------------------------------
+
+Time
 
 Morning
 
@@ -125,214 +155,292 @@ Snow
 
 Golden Hour
 
----
-
-## 4. Character List
-
-Extract every character.
-
-Each character must include:
-
-Name
-
-Identity
-
-Estimated Age
-
-Gender
-
-Appearance
-
-Costume
-
-Personality
-
-Current Emotion
-
-Current Goal
-
-Relationship
-
-Important Props
-
-Characters must remain consistent throughout the entire story.
-
----
-
-## 5. Scene List
-
-Identify every location.
-
-Each location includes:
-
-Scene Name
-
-Scene Type
-
-Indoor / Outdoor
-
-Time
-
-Atmosphere
-
-Important Objects
-
-Possible Camera Space
-
----
-
-## 6. Story Structure
-
-Split story into logical narrative units.
-
-Each unit should contain:
-
-Beginning
-
-Development
-
-Conflict
-
-Turning Point
-
-Result
-
-Do NOT create shots here.
-
----
-
-## 7. Conflict
-
-Extract all conflicts.
-
-Possible types:
-
-Character Conflict
-
-Internal Conflict
-
-Environmental Conflict
-
-Social Conflict
-
-Time Conflict
-
-Survival Conflict
-
----
-
-## 8. Emotion Curve
-
-Generate audience emotion progression.
-
-Example
-
-Calm
-
-↓
-
-Curious
-
-↓
-
-Suspense
-
-↓
-
-Shock
-
-↓
-
-Release
-
-The emotion curve will guide shot rhythm later.
-
----
-
-## 9. Visual Elements
-
-Extract every visual element.
-
-Examples
-
-Tea Cup
-
-Sword
-
-Blood
-
-Rain
-
-Door
-
-Horse
-
-Mountain
-
-Lantern
-
-Smoke
-
-These elements become visual priorities later.
-
----
-
-## 10. Story Summary
-
-Summarise the story using visual language.
-
-DO NOT describe writing quality.
-
-Describe only what can be filmed.
-
----
-
-# Rules
-
-Rule 01
-
-Never generate prompts.
-
-Rule 02
-
-Never split shots.
-
-Rule 03
-
-Never invent new story.
-
-Rule 04
-
-Never change plot.
-
-Rule 05
-
-Only analyse.
-
----
-
-# Output Format
-
-Story Bible
-
-Genre
-
-World
-
-Timeline
+------------------------------------------------------------
 
 Characters
 
-Scenes
+List all characters appearing in this scene.
 
-Structure
+Example
+
+Su Boss
+
+Young Master
+
+Little Girl
+
+------------------------------------------------------------
+
+Character Objective
+
+Describe what each character wants in this scene.
+
+Example
+
+Su Boss
+
+Observe.
+
+Young Master
+
+Pressure Su Boss.
+
+Girl
+
+Stay Silent.
+
+------------------------------------------------------------
+
+Emotion
+
+Choose ONE dominant audience emotion.
+
+Curiosity
+
+Calm
+
+Suspense
+
+Danger
+
+Comedy
+
+Sadness
+
+Hope
+
+Victory
+
+------------------------------------------------------------
 
 Conflict
 
-Emotion Curve
+Identify the primary conflict.
 
-Visual Elements
+Character
 
-Story Summary
+Environment
+
+Psychological
+
+Social
+
+Action
+
+------------------------------------------------------------
+
+Visual Anchors
+
+Extract visual elements that must remain consistent throughout the scene.
+
+Examples
+
+Tea Table
+
+Tea Cup
+
+Wooden Chair
+
+Restaurant Door
+
+Lantern
+
+Rain
+
+Sword
+
+Smoke
+
+------------------------------------------------------------
+
+Estimated Shot Count
+
+Estimate only.
+
+Do NOT create shots here.
+
+Examples
+
+5
+
+8
+
+12
+
+18
+
+------------------------------------------------------------
+
+Scene Ending Condition
+
+Describe what marks the end of this scene.
+
+Examples
+
+Door Opens
+
+Girl Runs Away
+
+Master Stands Up
+
+Conflict Begins
+
+Conversation Ends
+
+------------------------------------------------------------
+
+# Scene Rules
+
+Rule 01
+
+One Scene contains one continuous dramatic objective.
+
+------------------------------------------------------------
+
+Rule 02
+
+One Scene should preferably occur in one primary location.
+
+------------------------------------------------------------
+
+Rule 03
+
+Avoid changing location inside the same Scene.
+
+------------------------------------------------------------
+
+Rule 04
+
+Visual continuity has higher priority than story compression.
+
+------------------------------------------------------------
+
+Rule 05
+
+Scene first.
+
+Shot later.
+
+Never reverse this order.
+
+------------------------------------------------------------
+
+# Scene Output Example
+
+------------------------------------------------------------
+
+Scene 01
+
+Scene Name
+
+Tea House
+
+Narrative Function
+
+Introduce
+
+Scene Objective
+
+Introduce Su Boss and establish the coming conflict.
+
+Location
+
+Ancient Tea House
+
+Time
+
+Morning
+
+Characters
+
+Su Boss
+
+Young Master
+
+Little Girl
+
+Emotion
+
+Calm
+
+Conflict
+
+Hidden Tension
+
+Visual Anchors
+
+Tea Cup
+
+Tea Table
+
+Wooden Window
+
+Lantern
+
+Estimated Shot Count
+
+9
+
+Scene Ending
+
+Young Master begins speaking.
+
+------------------------------------------------------------
+
+Scene 02
+
+Scene Name
+
+Negotiation Begins
+
+Narrative Function
+
+Conflict
+
+Scene Objective
+
+Young Master pressures Su Boss to hand over the girl.
+
+Location
+
+Tea House
+
+Time
+
+Continuous
+
+Characters
+
+Su Boss
+
+Young Master
+
+Little Girl
+
+Emotion
+
+Suspense
+
+Conflict
+
+Character Conflict
+
+Visual Anchors
+
+Tea Cup
+
+Girl
+
+Young Master's Fan
+
+Estimated Shot Count
+
+12
+
+Scene Ending
+
+Young Master reveals his true intention.
+
+------------------------------------------------------------
 
 End.
